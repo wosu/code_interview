@@ -16,6 +16,7 @@ class Solution:
                 str1.append(s[i])
         return "".join(str1)
 
+
 if __name__ == '__main__':
     a = "We Are Happy"
     s = Solution()

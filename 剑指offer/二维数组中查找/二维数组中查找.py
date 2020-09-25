@@ -46,9 +46,29 @@ class Solution:
         print(row_i,col_j)
         return False
 
+    def Find2(self,target,array):
+        if len(array) ==0 or len(array[0]) ==0:
+            return False
+        m_row = len(array)
+        n_col = len(array[0])
+
+        row_i = m_row
+        col_j = 1
+
+        while row_i >=1 and col_j <= n_col:
+            a_ij = array[row_i-1][col_j-1]
+            print(a_ij,row_i,col_j)
+            if a_ij == target:
+                return True
+            elif a_ij < target:
+                col_j +=1
+            elif a_ij > target:
+                row_i -=1
+        return False
+
 if __name__ == '__main__':
     a = [[1,2,8,9],[2,4,9,12],[4,7,10,13],[6,8,11,15]]
     print(a)
     solu = Solution()
-    print(solu.Find(7,a))
+    print(solu.Find2(7,a))
 
